@@ -55,15 +55,15 @@
 
    v5.0 - 07/04/2026 - Defina a search Wikipedia funcao.
 
-   v6.0 - 07/04/2026 - 
+   v6.0 - 07/04/2026 - Versao final tarefa 02
    
-   v7.0 -
+   v7.0 - 05/05/2026 - Integre o search comando em main
 
-   v8.0 -
+   v8.0 - 05/05/2026 - Chame a searchWikipedia a funcao a partir da mainfuncao 
 
-   v9.0 - 
- 
-   v10.0 - Versão atual
+   v9.0 - 05/05/2026 - Lide com a falta do titulo do artigo ea entrada do usuario com o stdin comando
+	
+   v10.0 - 05/05/2026 - Finalizar searchWikipedia a impressao de resultados de pesquisa simulados: atualize searchWikipedia para exibir mensagens que indiquem que nosso que o programa encontrou o algo
 
 ========================================================================================= 
 
