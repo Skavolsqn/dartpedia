@@ -1,69 +1,95 @@
 /*
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Informacoes:
-O aplicativo cli faz parte do projeto Dartpedia.
-O cli eh nosso primeiro aplicativo que esta sendo desenvolvido usando Dart. 	
-cli.dart - Fica localizado na pasta dartpedia, em /dartpedia/cli/bin.
-Outras informacoes importantes sobre o cli; nosso aplicativo.
-site		:
-Autor		: Ronaldo de Souza Firmiano Oliveira Rodrigues <ronaldo.s.rodrigues9@aluno.senai.br>
-Manutencao	: 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Funcionamento:
-Inicialmente o cli, ao ser executado, mostra uma saudacao na tela, por exemplo:
-Dentro da pasta dartpedia em /home/ronaldo.souza/dartpedia/cli rode o comando
-dart run; deve aparecer a mensagem de saudacao, "Hello, Dart!"
-Obs: Importante ! Este aplicativo este em desenvolvimento e ao longo do tempo o
-comportamento do aplicativo pode mudar.
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Dicionario do Versionamento:
-v = versao
-0 = Inicio do versionamento
-. = Implementacao de versionamento
-1 = Proxima versao, 2, proxima versao, e assim por diante.
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Historico do Versionamento:
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Versao: 0.0.0
-Data: 30/03/2026 
-Descricao do codigo: Codigo original....
-Codigo:
+=========================================================================================
 
-import 'package:cli/cli.dart' as cli;
+ /darpedia/cli/bin
 
-void main(List<String> arguments) {
-	print('Hello world: ${cli.calculate()}!');
-}
+ Nome do Programa: cli.dart 
+ Descrição: Ferramenta utilitária de terminal que gerencia argumentos de 
+ entrada para fornecer informações sobre o sistema Dartpedia e realizar buscas 
+ de títulos de artigos específicos. 
 
-Saida padrao ao executar o codigo: 
+========================================================================================= 
 
-Building package executable...
-Built cli:cli.
-Hello world: 42!
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Autor: Rafael Silva e Pinto
+ E-mail: rafael.s.pinto9@aluno.senai.br
+ 
+ Manutenção: Rafael Silva e Pinto
+ E-mail: rafael.s.pinto9@aluno.senai.br
+ 
+========================================================================================= 
+  
+ Funcionamento: Funcionamento:Processamento de argumentos de entrada 
+ (List<String> arguments) via terminal. O fluxo principal utiliza estruturas
+ condicionais para validar o comando inserido, permitindo a verificação de
+ versão, exibição de instruções de uso e futuras consultas à base de dados Dartpedia.
 
-Versao: 0.0.1
-Data: 30/03/2026 
-Descricao da atualizacao: Simplifique a saida. Apague a primeira linha, ...import...
-e troque a saudacao para "Hello, Dart!".
-Codigo:
+=========================================================================================
 
-void main(List<String> arguments) {
+ Exemplo de uso:
+ 
+ 1. Primeira saudacao:
+    $ dart run bin/main.dart
+    Saída: Hello, Dart!
+
+ 2. Com versionamento:
+    $ dart run bin/main.dart version
+    Saída: Dartpedia CLI version 0.0.1
+
+========================================================================================= 
+ 
+ Historico de versao:
+
+   v1.0 - 30/03/2026 - Licao 01 - Crie seu primeiro aplicativo
+
+   v1.1 - Primeira modificação (Hello, Dart!)
+
+   v2.0 - 30/03/2026 - Licao 02 - Comandos version e help
+
+   v2.1 - 30/03/2026 - Tarefa - Comando search (estrutura inicial)
+
+   v3.0 - 30/03/2026 - Tarefa - Entrada do usuario (stdin)
+
+   v4.0 - 06/02/2026 - Implementar o comando de busca.
+
+   v5.0 - 07/04/2026 - Defina a search Wikipedia funcao.
+
+   v6.0 - 07/04/2026 - 
+   
+   v7.0 -
+
+   v8.0 -
+
+   v9.0 - 
+ 
+   v10.0 - Versão atual
+
+========================================================================================= 
+
+ Licenca: Copyright
+
+=========================================================================================
+
+ Comando principal
+
+
+ - v1.0 - 30/03/2026 - Primeiro Codigo
+
+	 	import 'package:cli/cli.dart' as cli;
+
+	void main(List<String> arguments) {
+		print('Hello world: ${cli.calculate()}!');
+	}
+
+ - v1.1 - 30/03/2026 - Primeira modificação (Hello, Dart!)
+
+	void main(List<String> arguments) {
 	print('Hello, Dart!');
-}
+	}
 
-Saida padrao ao executar o codigo:
 
-Building package executable...
-Built cli:cli.
-Hello, Dart!
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Versao: 0.0.2
-Data: 30/03/2026
-Descricao da atualizacao: Implementar comandos de versao e ajuda
-Codigo:
+ - v2.0 - 30/03/2026 - Licao 02 - Comandos version e help
 
-const version = '0.0.2'; 
+	const version = '0.0.1'; 
 
 void main(List<String> arguments) {
 	if (arguments.isEmpty) {
@@ -73,18 +99,11 @@ void main(List<String> arguments) {
   	}
 }
 
-Saida ao executar o codigo: (Execute sua aplicacao com o argumento de versao: dart bin/cli.dart version). Obs. Importate !! Se voce executar seu aplicativo sem argumentos, ainda vera "Ola, Dart!". Voce devera ver agora:
+ - v2.1 - 06/04/2026 - Tarefa - Comando search (estrutura inicial)
 
-Dartpedia CLI version 0.0.2
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Versao: 0.0.3
-Data: 31/03/2026
-Descricao da atualizacao: Adicione uma printUsage funcao. Para tornar a saida mais amigavel ao usuario, crie uma funcao separada para exibir as informacoes de uso.
-Codigo:
+	const version = '0.0.2'; // Add this line
 
-const version = '0.0.3'; // Add this line
-
-void main(List<String> arguments) {
+	void main(List<String> arguments) {
 	if (arguments.isEmpty) {
 		print('Hello, Dart!');
 	} else if (arguments.first == 'version') {
@@ -96,15 +115,11 @@ void main(List<String> arguments) {
 void printUsage() { // Add this new function
   print("The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>'");
 }
+	
 
-Saida ao executar o codigo: Perguntas: O que acontece ao executar este codigo, com o comando Dart run ? E o comando dart run cli.dart version ? Como executo o help ? E o search ?
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Versao: 0.0.4
-Data: 31/03/2026
-Descricao da atualizacao: Implemente o help comando e refine main: Agora, integre o help comando usando uma else if instrucao e limpe o comportamento padrao para chamara printUsage funcao.
-Codigo:
+ - v3.0 - 06/04/2026 - Tarefa - Entrada do usuario (stdin)
 
-const version = '0.0.4'; // Add this line
+	const version = '0.0.3'; // Add this line
 
 void main(List<String> arguments) {
 	if (arguments.isEmpty || arguments.first == 'help') {
@@ -119,23 +134,11 @@ void printUsage() { // Add this new function
 	print(
 	"The following commends are valid: 'help', 'version', 'search >ARTICLE-TITLE>'");
 }
-		
-Saida ao executar o codigo: 1 -> dart bin/cli.dart help. Tente tambem, 2 -> dart bin/cli.dart.
 
-Saida 1 -> The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>
 
-Saida 2 -> The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>
+ - v4.0 - 06/04/2026 - Implementar o comando de busca.
 
-Obs. Importante na saida ao executar o codigo: Observe que as informacoes de uso continuam sendo exibidas. Neste ponto, qualquer comando que voce nao tenha definido tambem exibira informacoes de uso. Este eh o comportamento esperado por enquanto.  
-------------------------------------------------------------------------------------
-Versao: 0.0.5
-Data: 06/04/2026
-Descricao da atualizacao: Implementar o comando de busca.
-Implemente um comando basico search que receba o titulo de um artigo como entrada. Ao desenvolver essa funcionalidade, voce trabalhara com List manipulacao de dados, verificacao de valores nulos e interpolacao de strings.
-1. Integre o search comando em main: Primeiro, modifique a mainfuncao cli/bin/cli.dart para incluir um else if que lide com o search comando. Por enquanto, basta imprimir uma mensagem de espaco reservado.
-Codigo:
-
-const version = '0.0.5'; // Add this line
+	const version = '0.0.4'; // Add this line
 
 void main(List<String> arguments) {
   if (arguments.isEmpty || arguments.first == 'help') {
@@ -146,7 +149,7 @@ void main(List<String> arguments) {
     // Add this new block:
     print('Search command recognized!');
   } else {
-    printUsage();t
+    printUsage();
   }
 }
 
@@ -156,27 +159,9 @@ void printUsage() { // Add this new function
   );
 }
 
-Saida ao executar o codigo: Teste o novo comando: Execute sua aplicacao com o search comando:
-t
-dart bin/cli.dart search
+ - v5.0 - 07/04/2026 - Defina a search Wikipedia funcao.
 
-Voce devera ver:
-
-Search command recognized!
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Versao: 0.0.6
-Data: 07/04/2026
-Descricao da atualizacao: Defina a search Wikipedia funcao: O search comando eventualmente executara alogica principal do seu aplicativo chamando uma funcao chamada search Wikipedia. Por enquanto, faca 
-com que ela search Wikipedia imprima os argumentos passados para ela com o search comando. 
-Coloque esta nova funcao abaixo de main.
-// ... (your existing main function)t
-void searchWikipedia(List<String>? arguments) { // Add this new function and add ? to arguments type
-  print('searchWikipedia received arguments: $arguments');
-}
-// ... (your existing printUsage() function) 
-Codigo:
-
-const version = '0.0.5'; // Add this line
+	const version = '0.0.5'; // Add this line
 
 void main(List<String> arguments) {
 	if (arguments.isEmpty || arguments.first == 'help') {
@@ -201,10 +186,8 @@ void printUsage() { // Add this new function
     	"The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>'");
 }
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Codigo valido ate o momento !!
-// Codigo:
-*/
+ - v6.0 - Versão final tarefa 02
+
 const version = '0.0.6'; // <-- Adicionado esta linha na versao '0.0.2'
 
 void main(List<String> arguments) {
@@ -229,25 +212,84 @@ void printUsage() { // <-- Adicionado esta funcao na versao '0.0.3' e '0.0.4'
 	print(
 	"The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>'");
 }
-/*
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Menu de testes:
-// Use estes comandos para testar os codigos, obviamnete pode não se er o resultado certo dependendo da versão da qual você está usando
-//
-// dart run bin/cli.dart version
-// A saída tem que se ter isso:
-// Dartpedia CLI version 0.0.X (X pois depenbde da versão que você está usando
-//
-// dart run bin/cli.dart help
-// A saída tem que se ter isso:
-// The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>'
-//
-// dart run bin/cli.dart search Dart Programming
-// A saída tem que se ter isso:
-// Looking up articles about "Dart Programming". Please wait.
-// Here ya go!
-// (Pretend this is an article about "Dart Programming")
-//
-// dart run bin/cli.dart search
-// A saída tem que ter isso:
-// Looking up articles about "(o que você digitar)"
+
+ - v7.0 - Integre o search comando em main.
+
+	const version = '0.0.7';
+
+void main(List<String> arguments) {
+  if (arguments.isEmpty || arguments.first == 'help') {
+    printUsage();
+  } else if (arguments.first == 'version') {
+    print('Dartpedia CLI version $version');
+  } else if (arguments.first == 'search') {
+    // Add this new block:
+    print('Search command recognized!');
+  } else {
+    printUsage();
+
+ - v8.0 - Chame a searchWikipedia funcao a partir da mainfuncao.
+
+	const version = '0.08';
+
+void main(List<String> arguments) {
+  if (arguments.isEmpty || arguments.first == 'help') {
+    printUsage();
+  } else if (arguments.first == 'version') {
+    print('Dartpedia CLI version $version');
+  } else if (arguments.first == 'search') {
+    // Add this new block:
+    final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
+    searchWikipedia(inputArgs);
+  } else {
+    printUsage();
+  }
+}
+
+ - v9.0 - Lide com a falta do titulo do artigo e a entrada do usuario com o stdin comando.
+
+	const version = '0.09';
+  
+void searchWikipedia(List<String>? arguments) {
+  final String articleTitle;
+
+  // If the user didn't pass in arguments, request an article title.
+  if (arguments == null || arguments.isEmpty) {
+    print('Please provide an article title.');
+    // Await input and provide a default empty string if the input is null.
+    articleTitle = stdin.readLineSync() ?? '';
+  } else {
+    // Otherwise, join the arguments into a single string.
+    articleTitle = arguments.join(' ');
+  }
+
+  print('Current article title: $articleTitle');
+}
+
+
+ - v10.0 - Finalizar searchWikipedia a impressao de resultados de pesquisa simulados: Atualize searchWikipedia para 
+exibir mensagens que indiquem que nosso programa encontrou algo.
+
+	const version = '0.10'; 
+ 
+void searchWikipedia(List<String>? arguments) {
+  final String articleTitle;
+
+  // If the user didn't pass in arguments, request an article title.
+  if (arguments == null || arguments.isEmpty) {
+    print('Please provide an article title.');
+    // Await input and provide a default empty string if the input is null.
+    articleTitle = stdin.readLineSync() ?? '';
+  } else {
+    // Otherwise, join the arguments into the CLI into a single string
+    articleTitle = arguments.join(' ');
+  }
+
+  print('Looking up articles about "$articleTitle". Please wait.');
+  print('Here ya go!');
+  print('(Pretend this is an article about "$articleTitle")');
+}
+
+ - V11.0 - 
+
 */
