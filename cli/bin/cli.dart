@@ -383,20 +383,22 @@ Future<String> getWikipediaArticle(String articleTitle) async {
     return response.body;
   }
 
-  // Se deu 
+  // Se deu Erro
+      return 'Error: Failed to fetch article '
+      '"$articleTitle". '
+      'Status code: ${response.statusCode}';
 
 */
-
-const version = '0.4.0';
 
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:command_runner/command_runner.dart';
 
-void main(List<String> arguments) async { // main is now async and awaits the runner
-  var runner = CommandRunner(); // Create an instance of your new CommandRunner
-  await runner.run(arguments); // Call its run method, awaiting its Future<void>
+void main(List<String> arguments) async { 
+  var runner = CommandRunner(); // Parênteses vazios, sem nenhum texto dentro
+  await runner.run(arguments); 
 }
+
 
 
 
