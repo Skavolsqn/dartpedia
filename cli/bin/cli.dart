@@ -388,6 +388,7 @@ Future<String> getWikipediaArticle(String articleTitle) async {
       '"$articleTitle". '
       'Status code: ${response.statusCode}';
 
+ - v4.0 - 12/05/2026 - Versão atual
 */
 
 import 'dart:io';
