@@ -296,10 +296,12 @@ void searchWikipedia(List<String>? arguments) {
 =========================================================================================
  - v3.0 - 11/05/2026 - Versão Atual - Inicio da Tarefa 3 do flutter
 =========================================================================================
-*/
+
 
 import 'dart:io';
 import 'package:http/http.dart' as http;
+import 'package:command_runner/command_runner.dart';
+
 
 const version = '0.3.0';
 
@@ -381,8 +383,18 @@ Future<String> getWikipediaArticle(String articleTitle) async {
     return response.body;
   }
 
-  // Se deu erro
-  return 'Error: Failed to fetch article '
-      '"$articleTitle". '
-      'Status code: ${response.statusCode}';
+  // Se deu 
+
+*/
+
+const version = '0.4.0';
+
+import 'dart:io';
+import 'package:http/http.dart' as http;
+import 'package:command_runner/command_runner.dart';
+
+void main(List<String> arguments) async { // main is now async and awaits the runner
+  var runner = CommandRunner(); // Create an instance of your new CommandRunner
+  await runner.run(arguments); // Call its run method, awaiting its Future<void>
 }
+
