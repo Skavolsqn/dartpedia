@@ -66,6 +66,8 @@
    v2.9 - 05/05/2026 - Finalizar searchWikipedia a impressao de resultados de pesquisa simulados: atualize searchWikipedia para exibir mensagens que indiquem que nosso que o programa encontrou o algo
 
    v3.0 - 11/05/2026 - Versão Atual - Inicio da Tarefa 3 do flutter
+
+   v4.0 - 12/05/2026 - Versão atual Lição 4
 ========================================================================================= 
 
  Licenca: Copyright
@@ -293,10 +295,8 @@ void searchWikipedia(List<String>? arguments) {
   print('(Pretend this is an article about "$articleTitle")');
 }
 
-=========================================================================================
- - v3.0 - 11/05/2026 - Versão Atual - Inicio da Tarefa 3 do flutter
-=========================================================================================
 
+ - v3.0 - 11/05/2026 - Versão Atual - Inicio da Tarefa 3 do flutter
 
 import 'dart:io';
 import 'package:http/http.dart' as http;
