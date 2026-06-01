@@ -389,7 +389,7 @@ Future<String> getWikipediaArticle(String articleTitle) async {
       'Status code: ${response.statusCode}';
 
  - v4.0 - 12/05/2026 - Versão atual Lição 4
-*/
+
 
 import 'dart:io';
 import 'package:http/http.dart' as http;
@@ -400,6 +400,12 @@ void main(List<String> arguments) async {
   await runner.run(arguments); 
 }
 
+*/
+
+void main(List<String> arguments) async {
+  // Por enquanto, apenas recebe os argumentos do terminal
+  print('CommandRunner received arguments: $arguments');
+}
 
 
 
