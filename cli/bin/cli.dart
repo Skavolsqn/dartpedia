@@ -18,6 +18,12 @@
 
  Manutenção: Ronaldo 
  E-mail: ronaldo.s.rodruigues9@aluno.senai.br 
+
+  Manutenção: Emerson 
+ E-mail: emerson.a.silva17@aluno.senai.br 
+
+  Manutenção: Guilherme Miranda 
+ E-mail: guilherme.m.fernandes9@aluno.senai.br 
 ========================================================================================= 
   
  Funcionamento: Funcionamento:Processamento de argumentos de entrada 
@@ -68,6 +74,8 @@
    v3.0 - 11/05/2026 - Versão Atual - Inicio da Tarefa 3 do flutter
 
    v4.0 - 12/05/2026 - Versão atual Lição 4
+
+   v5.0 -  01/06/2026 - Versão 5 finalizada
 ========================================================================================= 
 
  Licenca: Copyright
@@ -388,7 +396,7 @@ Future<String> getWikipediaArticle(String articleTitle) async {
       '"$articleTitle". '
       'Status code: ${response.statusCode}';
 
- - v4.0 - 12/05/2026 - Versão atual Lição 4
+ - v4.0 - 12/05/2026 - Versão final da Lição 4
 
 
 import 'dart:io';
@@ -401,7 +409,7 @@ void main(List<String> arguments) async {
 }
 
 */
-
+//  - v5.0 - 01/06/2026 - Versão 5 finalizada
 void main(List<String> arguments) async {
   // Por enquanto, apenas recebe os argumentos do terminal
   print('CommandRunner received arguments: $arguments');
