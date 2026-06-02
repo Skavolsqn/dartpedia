@@ -395,6 +395,8 @@ Future<String> getWikipediaArticle(String articleTitle) async {
       return 'Error: Failed to fetch article '
       '"$articleTitle". '
       'Status code: ${response.statusCode}';
+}
+
 
  - v4.0 - 12/05/2026 - Versão final da Lição 4
 
@@ -409,13 +411,18 @@ void main(List<String> arguments) async {
 }
 
 */
+
 //  - v5.0 - 01/06/2026 - Versão 5 finalizada
-void main(List<String> arguments) async {
-  // Por enquanto, apenas recebe os argumentos do terminal
-  print('CommandRunner received arguments: $arguments');
+import 'package:command_runner/command_runner.dart';
+
+const version = '0.5.0';
+
+void main(List<String> arguments) {
+  var commandRunner = CommandRunner()
+    ..addCommand(HelpCommand());
+
+  commandRunner.run(arguments);
 }
-
-
 
 
 
