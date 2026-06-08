@@ -65,7 +65,7 @@ dart run bin/cli.dart
 
 Assim entrar no temrinal você entrara na pasta dartpedia/cli/bin. Você pode interagir com o programa na v5.0 digitando os seguintes comandos:
 
-* **Vizualizar e executar o Hep com o comando: dart cli.dart help**
+* **Vizualizar e executar o help com o comando: dart cli.dart help**
   ```
   Usage: dart bin/cli.dart <command> [commandArg?] [...options?]
   help: Prints usage information to the command line.
