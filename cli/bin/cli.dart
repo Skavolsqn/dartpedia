@@ -410,7 +410,7 @@ void main(List<String> arguments) async {
   await runner.run(arguments); 
 }
 
-*/
+
 
 //  - v5.0 - 01/06/2026 - Versão 5 finalizada
 import 'package:command_runner/command_runner.dart';
@@ -423,8 +423,29 @@ void main(List<String> arguments) {
 
   commandRunner.run(arguments);
 }
+*/
 
+//  - v6.0 - 15/06/2026 - Versão 6 finalizada
 
+import 'package:command_runner/command_runner.dart';
+
+const version = '0.5.0';
+
+void main(List<String> arguments) {
+  var commandRunner = CommandRunner(
+    onError: (Object error) {
+      if (error is Error) {
+        throw error;
+      }
+
+      if (error is Exception) {
+        print(error);
+      }
+    },
+  )..addCommand(HelpCommand());
+
+  commandRunner.run(arguments);
+}
 
 
 
