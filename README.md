@@ -63,12 +63,33 @@ dart run bin/cli.dart
 
 ## Exemplos Práticos de Uso
 
-Assim entrar no temrinal você entrara na pasta dartpedia/cli/bin. Você pode interagir com o programa na v5.0 digitando os seguintes comandos:
+Assim que entrar no terminal, você estará na pasta `dartpedia/cli/bin`. Você pode interagir com o programa na versão **v6.0** utilizando os seguintes comandos:
 
-* **Vizualizar e executar o help com o comando: dart cli.dart help**
+* **Visualizar a ajuda com o comando:**
+
+  ```bash
+  dart cli.dart help
+  ```
+
+  Saída esperada:
+
   ```
   Usage: dart bin/cli.dart <command> [commandArg?] [...options?]
   help: Prints usage information to the command line.
   ```
 
-* **Ele imprime isso pois o comando faz o pacote comandrunner procurar o comando help e quando encontrado ele imprime isso. Se der qualquer outro comando não ira aparecer nada pois o help não será encontrado**
+* **Este comando funciona porque o pacote `command_runner` procura pelo comando `help` entre os comandos registrados. Quando ele é encontrado, sua função é executada e as informações de uso são exibidas no terminal.**
+
+* **Testar o tratamento de erros com um comando inválido:**
+
+  ```bash
+  dart cli.dart invalid_command
+  ```
+
+  Saída esperada:
+
+  ```
+  ArgumentException: The first word of input must be a command.
+  ```
+
+* **Na versão v6.0 foi adicionado tratamento de exceções e validação de argumentos. Agora, quando o usuário digita um comando inválido, o sistema identifica o erro e exibe uma mensagem adequada em vez de simplesmente não retornar nada ou falhar inesperadamente.**
