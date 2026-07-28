@@ -423,7 +423,7 @@ void main(List<String> arguments) {
 
   commandRunner.run(arguments);
 }
-*/
+
 
 //  - v6.0 - 15/06/2026 - Versão 6 finalizada
 
@@ -447,7 +447,31 @@ void main(List<String> arguments) {
   commandRunner.run(arguments);
 }
 
+*/
 
+import 'package:command_runner/command_runner.dart';
+import 'package:command_runner/src/console.dart';
+
+const version = '0.5.0';
+
+void main(List<String> arguments) {
+  var commandRunner = CommandRunner(
+    onOutput: (String output) async {
+      await write(output);
+    },
+    onError: (Object error) {
+      if (error is Error) {
+        throw error;
+      }
+
+      if (error is Exception) {
+        print(error);
+      }
+    },
+  )..addCommand(HelpCommand());
+
+  commandRunner.run(arguments);
+}
 
 
 
