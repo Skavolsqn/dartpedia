@@ -46,7 +46,7 @@
     },
     {
       "name": "test",
-      "version": "1.31.2",
+      "version": "1.33.0",
       "dependencies": [
         "analyzer",
         "async",
@@ -131,7 +131,7 @@
     },
     {
       "name": "test_core",
-      "version": "0.6.19",
+      "version": "0.6.21",
       "dependencies": [
         "analyzer",
         "args",
@@ -158,7 +158,7 @@
     },
     {
       "name": "test_api",
-      "version": "0.7.13",
+      "version": "0.7.15",
       "dependencies": [
         "async",
         "boolean_selector",
