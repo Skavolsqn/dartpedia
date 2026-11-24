@@ -322,5 +322,7 @@
   ],
   "generator": "pub",
   "generatorVersion": "3.13.7",
+  "flutterRoot": "file:///google/flutter",
+  "flutterVersion": "3.47.9",
   "pubCache": "file:///home/guilherme_m_fernandes9/.pub-cache"
 }

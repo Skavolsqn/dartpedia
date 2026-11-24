@@ -2,8 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-
-import '../model/search_results.dart';
+import 'package:wikipedia/wikipedia.dart';
 
 Future<SearchResults> search(String searchTerm) async {
   final http.Client client = http.Client();
@@ -17,16 +16,14 @@ Future<SearchResults> search(String searchTerm) async {
         'search': searchTerm,
       },
     );
-
     final http.Response response = await client.get(url);
-
     if (response.statusCode == 200) {
       final List<Object?> jsonData =
           jsonDecode(response.body) as List<Object?>;
       return SearchResults.fromJson(jsonData);
     } else {
       throw HttpException(
-        '[WikipediaApiClient.search] '
+        '[ApiClient.search] '
         'statusCode=${response.statusCode}, '
         'body=${response.body}',
       );

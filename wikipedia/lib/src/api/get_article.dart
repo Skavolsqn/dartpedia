@@ -2,12 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-
-import '../model/article.dart';
+import 'package:wikipedia/wikipedia.dart';
 
 Future<List<Article>> getArticleByTitle(String title) async {
   final http.Client client = http.Client();
-
   try {
     final Uri url = Uri.https(
       'en.wikipedia.org',
@@ -20,17 +18,14 @@ Future<List<Article>> getArticleByTitle(String title) async {
         'explaintext': '',
       },
     );
-
     final http.Response response = await client.get(url);
-
     if (response.statusCode == 200) {
       final Map<String, Object?> jsonData =
           jsonDecode(response.body) as Map<String, Object?>;
-
       return Article.listFromJson(jsonData);
     } else {
       throw HttpException(
-        '[WikipediaApiClient.getArticleByTitle] '
+        '[ApiClient.getArticleByTitle] '
         'statusCode=${response.statusCode}, '
         'body=${response.body}',
       );

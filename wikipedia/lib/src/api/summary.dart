@@ -2,8 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-
-import '../model/summary.dart';
+import 'package:wikipedia/wikipedia.dart';
 
 Future<Summary> getRandomArticleSummary() async {
   final http.Client client = http.Client();
@@ -19,7 +18,7 @@ Future<Summary> getRandomArticleSummary() async {
       return Summary.fromJson(jsonData);
     } else {
       throw HttpException(
-        '[WikipediaApiClient.getRandomArticleSummary] '
+        '[WikipediaDart.getRandomArticleSummary] '
         'statusCode=${response.statusCode}, body=${response.body}',
       );
     }
@@ -44,7 +43,7 @@ Future<Summary> getArticleSummaryByTitle(String articleTitle) async {
       return Summary.fromJson(jsonData);
     } else {
       throw HttpException(
-        '[WikipediaApiClient.getArticleSummaryByTitle] '
+        '[WikipediaDart.getArticleSummaryByTitle] '
         'statusCode=${response.statusCode}, body=${response.body}',
       );
     }
